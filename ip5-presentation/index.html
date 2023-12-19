@@ -1,13 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+  <title>IP5 - Präsentation</title>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>Slide 1</h1>
+
+
+
+      </section>
+
+      <section>
+        <pre><code data-trim data-noescape>
+        (def lazy-fib
+          (concat
+           [0 1]
+           ((fn rfib [a b]
+                (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+          </code></pre>
+      </section>
+
+      <section>
+        <h1>Slide 2</h1>
+      </section>
+
+      <section>
+        <h1>Slide 3</h1>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
