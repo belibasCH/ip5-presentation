@@ -7,22 +7,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/slideRunner.css">
+  <link rel="stylesheet" href="/runner.css">
+
   <title>IP5 - Präsentation</title>
 </head>
 
 <body>
   <div class="reveal">
     <div class="slides">
-
-      <section>
-        <h1>Slide 1</h1>
-
-
-
+      <section class="slideRunner" data-auto-animate>
+        <div class="treadmill-animation" data-id="treadmill-animation" style="left: 10%;">
+          <div class="runner">
+          <div class="runner-body"></div>
+          <div class="right-arm"></div>
+          <div class="left-arm"></div>
+          <div class="runner-legs">
+              <div class="right-leg">
+                  <div class="right-calf">
+                      <div class="right-shoe"></div>
+                  </div>
+              </div>
+              <div class="left-leg">
+                  <div class="left-calf">
+                      <div class="left-shoe"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="runner-face">
+              <div class="hair"></div>
+              </div>
+          </div>
+      </div>
+      </section>
+      <section class="slideRunner" data-auto-animate>
+        <div class="treadmill-animation" data-id="treadmill-animation" style=" left: 30%;">
+          <div class="runner">
+          <div class="runner-body"></div>
+          <div class="right-arm"></div>
+          <div class="left-arm"></div>
+          <div class="runner-legs">
+              <div class="right-leg">
+                  <div class="right-calf">
+                      <div class="right-shoe"></div>
+                  </div>
+              </div>
+              <div class="left-leg">
+                  <div class="left-calf">
+                      <div class="left-shoe"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="runner-face">
+              <div class="hair"></div>
+              </div>
+          </div>
+      </div>
       </section>
 
       <section>
-        <pre><code data-trim data-noescape>
+        <h1>Slide 1</h1>
+      </section>
+
+      <section>
+        <pre><code data-trim data-noescape data-line-numbers="1|2-4|5">
         (def lazy-fib
           (concat
            [0 1]
@@ -31,9 +80,7 @@
           </code></pre>
       </section>
 
-      <section>
-        <h1>Slide 2</h1>
-      </section>
+     
 
       <section>
         <h1>Slide 3</h1>
