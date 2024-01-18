@@ -7,7 +7,5 @@ let deck = new Reveal({
    plugins: [ Markdown, RevealHighlight  ],
 })
 deck.initialize({
-   autoAnimateEasing: 'ease-out',
-   autoAnimateDuration: 5,
 }
 );
