@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/slideRunner.css">
   <link rel="stylesheet" href="/runner.css">
+  <link rel="stylesheet" href="/commandPattern.css">
   <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
 
   <title>IP5 - Präsentation</title>
@@ -17,6 +18,78 @@
 <body>
   <div class="reveal">
     <div class="slides">
+      <section>
+        <h1>Software Architektur</h1>
+        <section>
+          <p class="user-story">Als Nutzer möchte Änderungen rückgängig machen und wiederholen, sodass ich die
+            Leistungsdaten korrekt bearbeiten kann</p>
+        </section>
+        <section>
+          <h3>Design Pattern</h2>
+        </section>
+        <section>
+          <h2>Command-Pattern</h2>
+              <pre>
+                <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
+                  {
+                    'identity': 'area_editor',
+                    'type': 'heart_rate',
+                    'value': 120,
+                    ''start_time': '00:12:50',
+                    'end_time': '00:13:00'
+                  }
+                </code>
+              </pre>
+        </section>
+        <section data-auto-animate>
+          <div id="stack-wrapper">
+            <div id="draft-stack">
+              <div class="command blue" data-id="command-1">Command 1</div>
+              <p>Neues Command</p>
+            </div>
+            <div id="undo-stack">
+              <div class="command red" data-id="command-2">Command 2</div>
+              <div class="command salmon" data-id="command-3">Command 3</div>
+              <p>Undo-Stack</p>
+
+            </div>
+            <div id="redo-stack">
+              <div class="command green" data-id="command-4">Command 4</div>
+              <p>Redo-Stack</p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div id="stack-wrapper">
+            <div id="draft-stack">
+              <p>Neues Command</p>
+            </div>
+            <div id="undo-stack">
+              <div class="command blue" data-id="command-1">Command 1</div>
+              <div class="command red" data-id="command-2">Command 2</div>
+              <div class="command salmon" data-id="command-3">Command 3</div>
+              <p>Undo-Stack</p>
+
+            </div>
+            <div id="redo-stack">
+              <div class="command green" data-id="command-4">Command 4</div>
+              <p>Redo-Stack</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Demo</h2>
+            <a href="http://localhost:8000/monitoring/activities/5-84217/edit/" target="_blank"></a>
+        </section>
+        <section>
+          <pre>
+            <h2>Implementierung</h2>
+            <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
+              JS Code von Redo und Undo Funktionen
+            </code>
+          </pre>
+        </section>
+      </section>
       <section data-background-image="./assets/bg.png" data-transition="slide">
         <div style="width: 60%;">
           <div class="logo-wrapper">
@@ -27,14 +100,14 @@
             <br>
           </div>
           <h1>Herzlich Willkommen</h1>
-
-
+          <p> IP5 Abschlusspräsentation - 23.1.2024</p>
+          <br>
           <h2>Fehleranalyse und -korrektur in aufgezeichneten Leistungsdaten
             von Fitness-Trackern</h2>
           <hr>
           <h3>Francesco Lucia und Elias Bräm
           </h3>
-          <p>23.1.2024 - IP5 Abschlusspräsentation</p>
+
         </div>
 
       </section>
@@ -90,8 +163,7 @@
         </div>
       </section>
       <section class="slideRunner black-slide" data-auto-animate data-background-color="black">
-        <img src="./assets/gold.png" alt="" class="content-img">>
-
+        <img src="./assets/gold.png" alt="" class="content-img">
         <div class="treadmill-animation" data-id="treadmill-animation" style=" left: 10%;">
           <div class="runner">
             <div class="runner-body"></div>
@@ -116,7 +188,7 @@
         </div>
       </section>
       <section class="slideRunner black-slide" data-auto-animate data-background-color="black">
-        <img src="./assets/garmin.png" alt="" class="content-img">>
+        <img src="./assets/garmin.png" alt="" class="content-img">
 
         <div class="treadmill-animation" data-id="treadmill-animation" style=" left: 20%;">
           <div class="runner">
@@ -142,7 +214,7 @@
         </div>
       </section>
       <section class="slideRunner black-slide" data-auto-animate data-background-color="black">
-        <img src="./assets/trainer.jpeg" alt="" class="content-img">>
+        <img src="./assets/trainer.jpeg" alt="" class="content-img">
 
         <div class="treadmill-animation" data-id="treadmill-animation" style=" left: 30%;">
           <div class="runner">
@@ -255,7 +327,7 @@
         <ul>
           <li>Problemstellung</li>
           <li>Ergebnisse der Analyse und Nutzerumfrage</li>
-          <li>Click – Prototyp</li>
+          <li>Konzept</li>
           <li>Demo und Einblicke
             <ul>
               <li>Custom Control</li>
@@ -268,36 +340,66 @@
 
       <section>
         <h1>Problemstellung</h1>
-        <ul>
-          <li>Problemstellung</li>
-          <li>Ergebnisse der Analyse und Nutzerumfrage</li>
-          <li>Click – Prototyp</li>
-          <li>Demo und Einblicke
-            <ul>
-              <li>Custom Control</li>
-              <li>Command Pattern</li>
-            </ul>
-          </li>
-          <li>Evaluation und User Testing</li>
-        </ul>
+      </section>
+      <section>
+        <h1>Analysen</h1>
+      </section>
+      <section>
+        <h1>Konzept</h1>
+      </section>
+      <section>
+        <h1>Auswahlelement</h1>
+        <p class="user-story">Als Nutzer möchte ich eine die Start und Endzeit auswählen, sodass ich die Leistungsdaten
+          zeitbeschränkt bearbeiten kann</p>
+        <section>
+          <br>
+        </section>
+        <section>
+          <br>
+          <h3>Standardlösung</h2>
+            <label for="">Start</label>
+            <input type="time">
+            <label for="">Ende</label>
+            <input type="time">
+        </section>
+        <section>
+          <h3>Umgesetzt als Custom Control</h2>
+        </section>
+        <section>
+          <img src="./assets/customV1.png" alt="" class="customcontrol-img">
+        </section>
+        <section>
+          <img src="./assets/customV2.png" alt="" class="customcontrol-img">
+        </section>
+        <section>
+          <img src="./assets/customV3.png" alt="" class="customcontrol-img">
+        </section>
+        <section>
+          <img src="./assets/customV4.png" alt="" class="customcontrol-img">
+        </section>
       </section>
 
-
       <section>
-        <pre><code data-trim data-noescape data-line-numbers="1|2-4|5">
+        <h1>Evaluation und User Testing</h1>
+      </section>
+      <section>
+        <h1>Q&A</h1>
+
+        <section>
+          <pre><code data-trim data-noescape data-line-numbers="1|2-4|5">
         (def lazy-fib
           (concat
            [0 1]
            ((fn rfib [a b]
                 (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
           </code></pre>
-      </section>
+        </section>
 
 
 
-      <section>
-        <h1>Slide 3</h1>
-      </section>
+        <section>
+          <h1>Slide 3</h1>
+        </section>
     </div>
   </div>
   <script type="module" src="/main.js"></script>
