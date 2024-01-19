@@ -6,8 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+  <!-- <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/white.css"> -->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/slideRunner.css">
+  <link rel="stylesheet" href="/theme.css">
   <link rel="stylesheet" href="/runner.css">
   <link rel="stylesheet" href="/commandPattern.css">
   <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
@@ -25,11 +27,10 @@
             Leistungsdaten korrekt bearbeiten kann</p>
         </section>
         <section>
-          <h3>Design Pattern</h2>
+          <h2>Command Pattern</h2>
         </section>
         <section>
-          <h2>Command-Pattern</h2>
-              <pre>
+        <pre>
                 <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
                   {
                     'identity': 'area_editor',
@@ -40,6 +41,7 @@
                   }
                 </code>
               </pre>
+
         </section>
         <section data-auto-animate>
           <div id="stack-wrapper">
@@ -82,9 +84,11 @@
             <a href="http://localhost:8000/monitoring/activities/5-84217/edit/" target="_blank"></a>
         </section>
         <section>
+          <h2>Implementierung</h2>
+        </section>
+        <section>
           <pre>
-            <h2>Implementierung</h2>
-            <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
+             <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
               JS Code von Redo und Undo Funktionen
             </code>
           </pre>
@@ -383,23 +387,15 @@
         <h1>Evaluation und User Testing</h1>
       </section>
       <section>
-        <h1>Q&A</h1>
-
+        <h1>Abschluss</h1>
         <section>
-          <pre><code data-trim data-noescape data-line-numbers="1|2-4|5">
-        (def lazy-fib
-          (concat
-           [0 1]
-           ((fn rfib [a b]
-                (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-          </code></pre>
+          <h2>Dank</h2>
+        </section>
+        <section>
+          <h2>Q&A</h2>
         </section>
 
-
-
-        <section>
-          <h1>Slide 3</h1>
-        </section>
+        
     </div>
   </div>
   <script type="module" src="/main.js"></script>
