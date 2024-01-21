@@ -1,3 +1,17 @@
+.areas {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.areas > div{
+  width: 20%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .customcontrol-img{
   width: 100%;
   height: 400px;
@@ -11,10 +25,11 @@
 }
 .user-story:before{
   content: "User Story";
-  padding: 5px;
+  padding: 10px;
+  font-size: 0.8em;
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: -35px;
+  right: -25px;
  background: #3b3b3b;
  color: white;
  z-index: 2;
