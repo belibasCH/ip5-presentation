@@ -66,6 +66,14 @@ section {
 .title-slide {
   text-align: center;
 }
+.send {
+  width: 100%;
+  height: 50px
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
 
 :root {
   font-family: 'Rubik', sans-serif !important;
