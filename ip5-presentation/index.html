@@ -13,7 +13,10 @@
   <link rel="stylesheet" href="/runner.css">
   <link rel="stylesheet" href="/commandPattern.css">
   <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
-
+  <!-- Chart plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
   <title>IP5 - Präsentation</title>
 </head>
 
@@ -302,27 +305,65 @@
             </li>
         </section>
       </section>
-      <section>
+      <section id="analysen" data-auto-animate>
         <h1>Analysen</h1>
         <section>
+          <h2>Umfrage</h2>
+          <p>Häufigkeit der fehlerhaften Trainingsdaten</p>
+          <div style="height: 280px" class="fragment fade-up">
+            <canvas data-chart="bar">
+              ,selten, manchmal, nie
+              Ergebnis aus 13 befragten Nutzer, 46.2,38.5,15.4
+            </canvas>
+          </div>
+        </section>
+        <section>
           <h2>Fehlaufzeichnungen</h2>
-          <p>Werden Daten falsch aufgezeichnet? Warum?</p>
-          <ul>
+          <p>Welche Daten können falsch aufgezeichnet werden?</p>
+          <ul class="fragment">
             <li>Herzfrequenz</li>
             <li>GPS</li>
             <li>Strecke</li>
             <li>Zeit</li>
           </ul>
         </section>
-        <section>
-          <h2>Umfrage</h2>
 
+        <section>
+          <h2>Einflüsse</h2>
+          <p>Welche äussere Einflüsse können die Messungen verfälschen?</p>
+          <ul>
+            <li>Umweltfaktoren
+              <ul>
+                <li class="fragment fade-up">Wetter</li>
+              </ul>
+            </li>
+            <li>Menschliches Versagen
+              <ul>
+                <li class="fragment fade-up">Vergesslichkeit</li>
+                <li class="fragment fade-up">flasche Bedienung</li>
+              </ul>
+            </li>
+            <li>Atmosphärische Faktoren
+              <ul>
+                <li class="fragment fade-up">atmosphärische Faktoren</li>
+               </ul>
+            </li>
+            <li>Technische Faktoren
+              <ul>
+                <li class="fragment fade-up">Energieversorgung</li>
+              </ul>
+            </li>
+            <li>Leistungssteigernde Substanzen
+              <ul>
+                <li class="fragment fade-up">Koffein, ..</li>
+              </ul>
+            </li>
+          </ul>
         </section>
       </section>
       <section>
         <h1>Konzept</h1>
         <section>
-
           <div class="areas">
             <div class="blue">Datenbereiche bearbeiten</div>
             <div class="salmon">Runden bearbeiten</div>
@@ -336,7 +377,7 @@
         </section>
       </section>
 
-      <section>
+      <section id="architektur">
         <h1>Software Architektur</h1>
         <section>
           <p class="user-story">Als Nutzer möchte Änderungen rückgängig machen und wiederholen, sodass ich die
@@ -345,34 +386,32 @@
         <section>
           <h2>Command Pattern</h2>
         </section>
-        <section>
-          <pre>
-                <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
+        <section id="command">
+          <pre><code data-line-numbers="2,8|2-4">
                   {
                     'identity': 'area_editor',
                     'type': 'heart_rate',
-                    'value': 120,
-                    ''start_time': '00:12:50',
+                    'value': '120',
+                    'start_time': '00:12:50',
                     'end_time': '00:13:00'
                   }
                 </code>
               </pre>
-
         </section>
         <section data-auto-animate>
           <div id="stack-wrapper">
             <div id="draft-stack">
-              <div class="command blue" data-id="command-1">Command 1</div>
+              <div class="command blue" data-id="command-4">Command 4</div>
               <p>Neues Command</p>
             </div>
             <div id="undo-stack">
               <div class="command red" data-id="command-2">Command 2</div>
-              <div class="command salmon" data-id="command-3">Command 3</div>
+              <div class="command salmon" data-id="command-1">Command 1</div>
               <p>Undo-Stack</p>
 
             </div>
             <div id="redo-stack">
-              <div class="command green" data-id="command-4">Command 4</div>
+              <div class="command green" data-id="command-3">Command 3</div>
               <p>Redo-Stack</p>
             </div>
           </div>
@@ -383,14 +422,14 @@
               <p>Neues Command</p>
             </div>
             <div id="undo-stack">
-              <div class="command blue" data-id="command-1">Command 1</div>
+              <div class="command blue" data-id="command-4">Command 4</div>
               <div class="command red" data-id="command-2">Command 2</div>
-              <div class="command salmon" data-id="command-3">Command 3</div>
+              <div class="command salmon" data-id="command-1">Command 1</div>
               <p>Undo-Stack</p>
 
             </div>
             <div id="redo-stack">
-              <div class="command green" data-id="command-4">Command 4</div>
+              <div class="command green" data-id="command-3">Command 3</div>
               <p>Redo-Stack</p>
             </div>
           </div>
@@ -402,13 +441,13 @@
             </div>
             <div id="undo-stack">
               <div class="command red" data-id="command-2">Command 2</div>
-              <div class="command salmon" data-id="command-3">Command 3</div>
+              <div class="command salmon" data-id="command-1">Command 1</div>
               <p>Undo-Stack</p>
 
             </div>
             <div id="redo-stack">
-              <div class="command blue" data-id="command-1">Command 1</div>
-              <div class="command green" data-id="command-4">Command 4</div>
+              <div class="command blue" data-id="command-4">Command 4</div>
+              <div class="command green" data-id="command-3">Command 3</div>
               <p>Redo-Stack</p>
             </div>
           </div>
@@ -419,14 +458,14 @@
               <p>Neues Command</p>
             </div>
             <div id="undo-stack">
-              <div class="command blue" data-id="command-1">Command 1</div>
+              <div class="command blue" data-id="command-4">Command 4</div>
               <div class="command red" data-id="command-2">Command 2</div>
-              <div class="command salmon" data-id="command-3">Command 3</div>
+              <div class="command salmon" data-id="command-1">Command 1</div>
               <p>Undo-Stack</p>
 
             </div>
             <div id="redo-stack">
-              <div class="command green" data-id="command-4">Command 4</div>
+              <div class="command green" data-id="command-3">Command 3</div>
               <p>Redo-Stack</p>
             </div>
           </div>
@@ -437,28 +476,67 @@
               <p>Neues Command</p>
             </div>
             <div id="undo-stack">
-              <div class="command blue" data-id="command-1">Command 1</div>
+              <div class="command blue" data-id="command-4">Command 4</div>
               <div class="command red" data-id="command-2">Command 2</div>
-              <div class="command salmon" data-id="command-3">Command 3</div>
+              <div class="command salmon" data-id="command-1">Command 1</div>
+              <p>Undo-Stack</p>
+            </div>
+            <div id="redo-stack">
+              <p>Redo-Stack</p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div id="stack-wrapper">
+            <div id="draft-stack">
+              <p>Neues Command</p>
+            </div>
+            <div id="undo-stack">
+              <div class="command blue" data-id="command-4">Command 4</div>
+              <div class="command red" data-id="command-2">Command 2</div>
+              <div class="command salmon" data-id="command-1">Command 1</div>
               <div class="send" data-id="command-3"></div>
               <p>Undo-Stack</p>
-
             </div>
             <div id="redo-stack">
-
-
               <p>Redo-Stack</p>
             </div>
           </div>
         </section>
-
         <section>
           <h2>Implementierung</h2>
         </section>
-        <section>
+        <section id="implementierung">
           <pre>
              <code data-trim data-noescape data-line-numbers="2|3|4|5|6">
-              JS Code von Redo und Undo Funktionen
+              addCommand (event) {
+                let newValue = event.value
+                if (this.activity.activity_type === running && event.type === 'pace') {
+                  newValue = this.reconvertPaceForSave(newValue)
+                }
+                if (event.type === 'speed') {
+                  newValue = newValue / this.speedConstant
+                }
+                newValue = parseFloat(newValue)
+                this.undoStack.push(
+                  {
+                    'identity': 'area_editor',
+                    'type': event.type,
+                    'value': newValue,
+                    'start_time': this.formatTime(this.startEdit),
+                    'end_time': this.formatTime(this.endEdit)
+                  }
+                )
+              },
+
+              undo () {
+                const moveCommand = this.undoStack.pop()
+                this.redoStack.push(moveCommand)
+              },
+              redo () {
+                const moveCommand = this.redoStack.pop()
+                this.undoStack.push(moveCommand)
+              },
             </code>
           </pre>
         </section>
